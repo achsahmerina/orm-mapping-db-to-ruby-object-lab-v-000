@@ -90,6 +90,6 @@ class Student
     sql = <<-SQL
     SELECT * FROM students WHERE students.grade = ?;
     SQL
-  DB[:conn].execute(sql, num)
+  DB[:conn].execute(sql)
   end
 end
