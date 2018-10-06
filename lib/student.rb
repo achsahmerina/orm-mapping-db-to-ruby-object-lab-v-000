@@ -74,11 +74,11 @@ class Student
     end
   end
 
-  def self.first_X_students_in_grade_10(num)
+  def self.first_X_students_in_grade_10
     sql = <<-SQL
     SELECT * FROM students WHERE students.grade = ? LIMIT 1
     SQL
-    DB[:conn].execute(sql, num).collect do |row|
+    DB[:conn].execute(sql).collect do |row|
       self.new_from_db(row)
     end.first
   end
